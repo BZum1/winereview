@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$.ajax({
 		type: "GET",
-		url: 'http://winereview.wpengine.com/wp-json/wp/v2/wine-api/',
+		url: 'https://winereview.wpengine.com/wp-json/wp/v2/wine-api/',
 		dataType: 'json',
 			error: function() {
 			alert( 'Unable to load posts.' );
