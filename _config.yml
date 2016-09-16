@@ -3,7 +3,7 @@ title: Wine Review
 email: ben@fiatinsight.com
 description: >
   Wine Review
-baseurl: ""
+baseurl: "winereview"
 url: "https://bzum1.github.io/winereview/"
 twitter_username: BenZumdahl
 github_username:  BZum1
