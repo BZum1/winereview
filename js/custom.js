@@ -12,12 +12,15 @@ $(document).ready(function() {
 
         var newBottle = '';
 
-        newBottle += '<div class="col-sm-6">';
+        newBottle += '<div class="col-sm-4">';
         newBottle += '<div class="bottle">';
-        newBottle += '<h3>' + post.title.rendered + '</h3>';
-        newBottle += '<p>' + post.acf.vintage + '</p>';
+        newBottle += '<h3>' + post.title.rendered + ' ' + post.acf.vintage + '</h3>';
         newBottle += '<p>' + post.acf.winery + '</p>';
-        newBottle += '<p>' + post.acf.style + '</p>';
+				newBottle += '<p>' + post.acf.state  + ', ' + post.acf.country + '</p>';
+        newBottle += '<p class="style">' + post.acf.style + '</p>';
+				newBottle += '</div>';
+				newBottle += '<div class="bottle-rate">';
+				newBottle += '<p class="vote"><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></p>';
         newBottle += '</div>';
         newBottle += '</div>';
 
