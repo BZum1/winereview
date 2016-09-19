@@ -64,14 +64,25 @@ p {
   p {
     margin-bottom: 0;
   }
+  &.color-white {
+    border-top: 4px solid #74d697;
+  }
+  &.color-red {
+    border-top: 4px solid #ea3325;
+  }
+  &.color-rose {
+    border-top: 4px solid #e91e63;
+  }
 }
 
 .bottle-rate {
   margin-bottom: 20px;
   padding: 10px 20px;
-  background: #dcdcdc;
+  background: #f7f7f7;
+  border-top: 1px solid #dcdcdc;
   .fa {
     margin-right: 3px;
+    color: #ff5722;
   }
   p {
     margin: 0;
