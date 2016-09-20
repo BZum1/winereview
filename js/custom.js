@@ -20,6 +20,7 @@ $(document).ready(function() {
 
 				var state = post.acf.state;
 				var country = post.acf.country;
+				var porowski = post.acf.porowski;
 
 				switch (style) {
 
@@ -40,11 +41,16 @@ $(document).ready(function() {
 						break;
 				}
 
-        newBottle += '<div class="col-sm-4">';
+				if(porowski == 'yes') {
+					newBottle += '<div class="col-sm-4 bottle-wrap bottle-pp">';
+				} else {
+					newBottle += '<div class="col-sm-4 bottle-wrap">';
+				}
+
 				newBottle += styleBlock;
         newBottle += '<h3>' + post.title.rendered + ' ' + post.acf.vintage + '</h3>';
         newBottle += '<p>' + post.acf.winery + '</p>';
-				newBottle += '<p><em>' + post.content.rendered + '</em></p>';
+				newBottle += '<div class="bottle-description">' + post.content.rendered + '</div>';
 
 				if(state) {
 					newBottle += '<p>' + post.acf.state  + '</p>';
@@ -54,6 +60,9 @@ $(document).ready(function() {
 				newBottle += '</div>';
 				newBottle += '<div class="bottle-rate"><p class="vote">';
 
+				if(porowski == 'yes') {
+					newBottle += '<div class="pp-icon"><i class="fa fa-trophy"></i></div>';
+				}
 
 				for(i = 0; i < corks; i++) {
 					corkFull += '<i class="fa fa-star"></i>';
@@ -63,7 +72,7 @@ $(document).ready(function() {
 
 				//newBottle += '<i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>';
         newBottle += '</p></div>';
-        newBottle += '</div>';
+        newBottle += '</div></div>';
 
         document.getElementById('wineposts').innerHTML += newBottle;
 
@@ -71,3 +80,16 @@ $(document).ready(function() {
 		}
 	});
 });
+
+$(document).ready(function() {
+	$( ".btn-view-pp" ).click(function() {
+	  $( ".bottle-wrap" ).addClass("hidden");
+		$( ".bottle-wrap.bottle-pp" ).addClass("shown");
+	});
+})
+
+$(document).ready(function() {
+	$( ".btn-view-all" ).click(function() {
+	  $( ".bottle-wrap" ).removeClass("hidden");
+	});
+})
